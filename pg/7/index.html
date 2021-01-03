@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<link rel="shortcut icon" type="image/gif" href="../../favicon.gif"/>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<meta property="og:title" content="">
+
+	<link rel="stylesheet" href="../../css/css.css">
+	
+</head>
+
+<body id="fuego-body" style="background:#CECAC7;overflow: hidden;" onload="displace();console.log('setting timeout..');setTimeout(goho_m,347000);document.getElementById('audio').volume=0.6">
+	<audio volume="0.5" reload="true" autoplay="true" id="sound">
+		<source src="../../assetz/noaptea_de_craciun.mp3" type="audio/mpeg">
+	</audio>
+
+	<div id="fuego-wrapper">
+		<svg width="200px" height="400px" id="fuego-svg" style="margin-left: 0px; margin-top: 0px">
+			<filter id="grayscale">
+			   
+		  	</filter>
+		  	<filter id="displacement">
+				<feTurbulence type="turbulence" baseFrequency="0.05" numOctaves="2" result="turbulence"/>
+				<feDisplacementMap in2="turbulence" in="SourceGraphic" scale="0" xChannelSelector="R" yChannelSelector="G" id="displacement-map"/>
+				<feColorMatrix type="saturate" values="0.10"/>
+			</filter>	
+	  		<image filter="url(#displacement)" href="../../assetz/fuego.jpg" width="200px" height="400px" id="fuego-img"/>
+		</svg>
+	</div>
+
+	<!--<img id="dots_overlay" src="../../assetz/dots.png"/>-->
+	<script src="../../assetz/bacovia.txt"></script>
+	<script src="../../js/js.js"></script>
+</body>
+
+</html>
