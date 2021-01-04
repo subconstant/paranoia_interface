@@ -10,7 +10,7 @@ body {
 
 * { cursor: crosshair }
 
-/* css image preloading */
+/* css image preloading -- tried once doesn't work, wip
 body::after {
 	position: absolute;
 	width: 0;
@@ -79,7 +79,7 @@ body::after {
 				url('/paranoia_interface/assetz/meme/49.jpg')
 
 				;
-}
+}*/
 
 
 
