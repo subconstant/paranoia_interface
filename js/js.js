@@ -24,6 +24,7 @@ function preloadImages(urls, allImagesLoadedCallback){
 function pre_img() {
 	preloadImages([
 		'/paranoia_interface/assetz/static.gif',
+		'/paranoia_interface/assetz/pano.jpg',
 
 		'/paranoia_interface/assetz/meme/1.jpg',
 		'/paranoia_interface/assetz/meme/2.jpg',
