@@ -1,3 +1,135 @@
+//image preload script thanks to stackoverflo'
+function preloadImages(urls, allImagesLoadedCallback){
+
+	var loadedCounter = 0;
+	var toBeLoadedNumber = urls.length;
+
+	urls.forEach(function(url){
+		preloadImage(url, function(){
+			loadedCounter++;
+			console.log('Number of loaded images: ' + loadedCounter);
+			if ( loadedCounter == toBeLoadedNumber ) {
+				allImagesLoadedCallback();
+			}
+		});
+	});
+	function preloadImage(url, anImageLoadedCallback){
+		console.log("Preloading: " + url)
+		var img = new Image();
+		img.onload = anImageLoadedCallback;
+		img.src = url;
+	}
+}
+
+function pre_img() {
+	preloadImages([
+		'/paranoia_interface/assetz/static.gif',
+
+		'/paranoia_interface/assetz/meme/1.jpg',
+		'/paranoia_interface/assetz/meme/2.jpg',
+		'/paranoia_interface/assetz/meme/3.jpg',
+		'/paranoia_interface/assetz/meme/4.jpg',
+		'/paranoia_interface/assetz/meme/5.jpg',
+		'/paranoia_interface/assetz/meme/6.jpg',
+		'/paranoia_interface/assetz/meme/7.jpg',
+		'/paranoia_interface/assetz/meme/8.jpg',
+		'/paranoia_interface/assetz/meme/9.jpg',
+
+		'/paranoia_interface/assetz/meme/10.jpg',
+		'/paranoia_interface/assetz/meme/11.jpg',
+		'/paranoia_interface/assetz/meme/12.jpg',
+		'/paranoia_interface/assetz/meme/13.jpg',
+		'/paranoia_interface/assetz/meme/14.jpg',
+		'/paranoia_interface/assetz/meme/15.jpg',
+		'/paranoia_interface/assetz/meme/16.jpg',
+		'/paranoia_interface/assetz/meme/17.jpg',
+		'/paranoia_interface/assetz/meme/18.jpg',
+		'/paranoia_interface/assetz/meme/19.jpg',
+
+		'/paranoia_interface/assetz/meme/20.jpg',
+		'/paranoia_interface/assetz/meme/21.jpg',
+		'/paranoia_interface/assetz/meme/22.jpg',
+		'/paranoia_interface/assetz/meme/23.jpg',
+		'/paranoia_interface/assetz/meme/24.jpg',
+		'/paranoia_interface/assetz/meme/25.jpg',
+		'/paranoia_interface/assetz/meme/26.jpg',
+		'/paranoia_interface/assetz/meme/27.jpg',
+		'/paranoia_interface/assetz/meme/28.jpg',
+		'/paranoia_interface/assetz/meme/29.jpg',
+
+		'/paranoia_interface/assetz/meme/30.jpg',
+		'/paranoia_interface/assetz/meme/31.jpg',
+		'/paranoia_interface/assetz/meme/32.jpg',
+		'/paranoia_interface/assetz/meme/33.jpg',
+		'/paranoia_interface/assetz/meme/34.jpg',
+		'/paranoia_interface/assetz/meme/35.jpg',
+		'/paranoia_interface/assetz/meme/36.jpg',
+		'/paranoia_interface/assetz/meme/37.jpg',
+		'/paranoia_interface/assetz/meme/38.jpg',
+		'/paranoia_interface/assetz/meme/39.jpg',
+
+		'/paranoia_interface/assetz/meme/40.jpg',
+		'/paranoia_interface/assetz/meme/41.jpg',
+		'/paranoia_interface/assetz/meme/42.jpg',
+		'/paranoia_interface/assetz/meme/43.jpg',
+		'/paranoia_interface/assetz/meme/44.jpg',
+		'/paranoia_interface/assetz/meme/45.jpg',
+		'/paranoia_interface/assetz/meme/46.jpg',
+		'/paranoia_interface/assetz/meme/47.jpg',
+		'/paranoia_interface/assetz/meme/48.jpg',
+		'/paranoia_interface/assetz/meme/49.jpg',
+
+		'/paranoia_interface/assetz/meme/50.jpg',
+		'/paranoia_interface/assetz/meme/51.jpg',
+		'/paranoia_interface/assetz/meme/52.jpg',
+		'/paranoia_interface/assetz/meme/53.jpg',
+		'/paranoia_interface/assetz/meme/54.jpg',
+		'/paranoia_interface/assetz/meme/55.jpg',
+		'/paranoia_interface/assetz/meme/56.jpg',
+		'/paranoia_interface/assetz/meme/57.jpg',
+		'/paranoia_interface/assetz/meme/58.jpg',
+		'/paranoia_interface/assetz/meme/59.jpg',
+
+		'/paranoia_interface/assetz/meme/60.jpg',
+		'/paranoia_interface/assetz/meme/61.jpg',
+		'/paranoia_interface/assetz/meme/62.jpg',
+		'/paranoia_interface/assetz/meme/63.jpg',
+		'/paranoia_interface/assetz/meme/64.jpg',
+		'/paranoia_interface/assetz/meme/65.jpg',
+		'/paranoia_interface/assetz/meme/66.jpg',
+		'/paranoia_interface/assetz/meme/67.jpg',
+		'/paranoia_interface/assetz/meme/68.jpg',
+		'/paranoia_interface/assetz/meme/69.jpg',
+
+		'/paranoia_interface/assetz/meme/70.jpg',
+		'/paranoia_interface/assetz/meme/71.jpg',
+
+		'/paranoia_interface/assetz/tarot/1.png',
+		'/paranoia_interface/assetz/tarot/2.png',
+		'/paranoia_interface/assetz/tarot/3.png',
+		'/paranoia_interface/assetz/tarot/4.png',
+		'/paranoia_interface/assetz/tarot/5.png',
+		'/paranoia_interface/assetz/tarot/6.png',
+		'/paranoia_interface/assetz/tarot/7.png',
+		'/paranoia_interface/assetz/tarot/8.png',
+		'/paranoia_interface/assetz/tarot/9.png',
+		'/paranoia_interface/assetz/tarot/10.png',
+		'/paranoia_interface/assetz/tarot/11.png',
+		'/paranoia_interface/assetz/tarot/12.png',
+		'/paranoia_interface/assetz/tarot/13.png',
+		'/paranoia_interface/assetz/tarot/14.png',
+		'/paranoia_interface/assetz/tarot/15.png',
+		'/paranoia_interface/assetz/tarot/16.png',
+		'/paranoia_interface/assetz/tarot/17.png',
+		'/paranoia_interface/assetz/tarot/18.png',
+		'/paranoia_interface/assetz/tarot/19.png',
+		'/paranoia_interface/assetz/tarot/20.png',
+		'/paranoia_interface/assetz/tarot/21.png'
+	], function(){
+	    console.log('All images were loaded');
+	});
+}
+
 if ( window.innerWidth < 1250 ) {
 	alert("Paranoia Interface was built to be seen on large computer screens. Please visit the site on a larger display or use a bigger browser window. Thank you.")
 }
